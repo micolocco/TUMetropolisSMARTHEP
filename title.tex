@@ -1,0 +1,60 @@
+
+\makeatletter
+\setbeamertemplate{title page}{
+  \begin{minipage}[b][\paperheight]{\textwidth}
+    %\centering  % <-- Center here
+    \vspace*{0.6cm}
+    \vfill%
+    \ifx\inserttitle\@empty\else\usebeamertemplate*{title}\fi
+    \ifx\insertsubtitle\@empty\else\usebeamertemplate*{subtitle}\fi
+    \vspace*{-0.5cm}
+    \usebeamertemplate*{title separator}
+    \vspace*{-0.6cm}
+    \ifx\beamer@shortauthor\@empty\else\usebeamertemplate*{author}\fi
+    \ifx\insertdate\@empty\else\usebeamertemplate*{date}\fi
+    \ifx\insertinstitute\@empty\else\usebeamertemplate*{institute}\fi
+    \vfill
+    \vspace*{1mm}
+  \end{minipage}
+}
+
+\setbeamertemplate{title}{
+%  \raggedright%  % <-- Comment here
+  \linespread{1.0}%
+  \inserttitle%
+  \par%
+  \vspace*{0.5em}
+}
+\setbeamertemplate{subtitle}{
+%  \raggedright%  % <-- Comment here
+  \insertsubtitle%
+  \par%
+  \vspace*{0.5em}
+}
+
+\def\ps@navigation@titlepage{%
+    \setbeamertemplate{headline}{
+        \leavevmode%
+        \hbox{%
+        \begin{beamercolorbox}[wd=\paperwidth,ht=37.5ex,dp=0ex,center]{bgcolor} 
+            \includegraphics[width=\linewidth, page=1, trim= 0cm 6cm 0cm 0cm, clip]{images/largeDetectorPhoto.jpeg}
+        \end{beamercolorbox}
+        }
+    }
+    \setbeamertemplate{footline}{
+        \leavevmode
+            \hbox{
+                \begin{beamercolorbox}[wd=\paperwidth,ht=2.25ex,dp=1ex,center]{bgcolor}
+                        \href{https://cern.ch}{\includegraphics[height=0.075\linewidth, trim= -2.5cm -5cm -2.5cm -5cm]{images/cern.jpeg}}
+                        \href{https://lhcb.web.cern.ch}{\includegraphics[page=1, trim= -5cm -2.5cm -5cm -2.5cm, height=0.075\linewidth ]{images/lhcb-logo-0121.pdf}}\hspace{0.75cm}
+                        \href{https://e5.physik.tu-dortmund.de/en/}{\includegraphics[page=1, trim= -0.4cm -0.4cm -0.4cm -0.4cm, height=0.075\linewidth ]{images/tud_logo_cmyk.pdf}}\hspace{0.75cm}
+                        \href{https://www.smarthep.org}{\includegraphics[height=0.075\linewidth]{images/smarthep.png}}
+                        \href{https://marie-sklodowska-curie-actions.ec.europa.eu}{\includegraphics[height=0.075\linewidth]{images/EU-Logo.jpeg}}
+                \end{beamercolorbox}
+        }
+    }
+    \setbeamertemplate{navigation symbols}{}
+    \@nameuse{ps@navigation}}
+\addtobeamertemplate{title page}{\thispagestyle{navigation@titlepage}}{}
+\makeatother
+    

@@ -1,0 +1,11 @@
+
+\setlength{\parindent}{0pt}
+\sisetup{separate-uncertainty=true, detect-weight=true, detect-family=true, separate-uncertainty-units=single}
+\setbeamerfont{footnote}{size=\tiny}
+
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
