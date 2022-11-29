@@ -5,14 +5,19 @@
     %\centering  % <-- Center here
     \vspace*{0.6cm}
     \vfill%
-    \ifx\inserttitle\@empty\else\usebeamertemplate*{title}\fi
-    \ifx\insertsubtitle\@empty\else\usebeamertemplate*{subtitle}\fi
-    \vspace*{-0.5cm}
+    \vspace{6pt}
+    \textbf{\Large\inserttitle}\\
     \usebeamertemplate*{title separator}
-    \vspace*{-0.6cm}
-    \ifx\beamer@shortauthor\@empty\else\usebeamertemplate*{author}\fi
-    \ifx\insertdate\@empty\else\usebeamertemplate*{date}\fi
-    \ifx\insertinstitute\@empty\else\usebeamertemplate*{institute}\fi
+    \vspace{-6pt}
+    \begin{center}
+    \begin{tabular}{>{\raggedright\arraybackslash}p{0.45\textwidth} >{\raggedleft\arraybackslash}p{0.325\textwidth}>{\raggedright\arraybackslash}p{0.125\textwidth}}
+        {\setstretch{1.125} \insertauthor \newline
+        \insertdate   \newline
+        \footnotesize{\insertinstitute}} &
+        \scriptsize{\textit{We acknowledge funding from the European Union Horizon 2020 research and innovation programme, call H2020-MSCA-ITN-2020, under Grant Agreement n. 956086.}} &
+        \vfill\includegraphics[width=1\linewidth]{template/images/EU-Logo.jpeg}
+    \end{tabular}
+    \end{center}
     \vfill
     \vspace*{1mm}
   \end{minipage}
@@ -48,8 +53,8 @@
                         \href{https://cern.ch}{\includegraphics[height=0.075\linewidth, trim= -2.5cm -5cm -2.5cm -5cm]{images/cern.jpeg}}
                         \href{https://lhcb.web.cern.ch}{\includegraphics[page=1, trim= -5cm -2.5cm -5cm -2.5cm, height=0.075\linewidth ]{images/lhcb-logo-0121.pdf}}\hspace{0.75cm}
                         \href{https://e5.physik.tu-dortmund.de/en/}{\includegraphics[page=1, trim= -0.4cm -0.4cm -0.4cm -0.4cm, height=0.075\linewidth ]{images/tud_logo_cmyk.pdf}}\hspace{0.75cm}
-                        \href{https://www.smarthep.org}{\includegraphics[height=0.075\linewidth]{images/smarthep.png}}
-                        \href{https://marie-sklodowska-curie-actions.ec.europa.eu}{\includegraphics[height=0.075\linewidth]{images/EU-Logo.jpeg}}
+                        \href{https://www.smarthep.org}{\includegraphics[height=0.075\linewidth]{images/smarthep-full.png}}
+                        \href{https://marie-sklodowska-curie-actions.ec.europa.eu}{\includegraphics[height=0.075\linewidth]{template/images/marie-curie-actions.jpg}}
                 \end{beamercolorbox}
         }
     }
