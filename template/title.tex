@@ -1,60 +1,50 @@
 
 \makeatletter
 \setbeamertemplate{title page}{
-  \begin{minipage}[b][\paperheight]{\textwidth}
-    %\centering  % <-- Center here
-    \vspace*{0.6cm}
-    \vfill%
-    \vspace{6pt}
-    \textbf{\Large\inserttitle}\\
-    \usebeamertemplate*{title separator}
-    \vspace{-6pt}
-    \begin{center}
-    \begin{tabular}{>{\raggedright\arraybackslash}p{0.45\textwidth} >{\raggedleft\arraybackslash}p{0.325\textwidth}>{\raggedright\arraybackslash}p{0.125\textwidth}}
-        {\setstretch{1.125} \insertauthor \newline
-        \insertdate   \newline
-        \footnotesize{\insertinstitute}} &
-        \scriptsize{\textit{We acknowledge funding from the European Union Horizon 2020 research and innovation programme, call H2020-MSCA-ITN-2020, under Grant Agreement n. 956086.}} &
-        \vfill\includegraphics[width=1\linewidth]{template/images/EU-Logo.jpeg}
-    \end{tabular}
-    \end{center}
-    \vfill
-    \vspace*{1mm}
-  \end{minipage}
+    \vspace{-1.5cm}
+    \begin{minipage}[b][0.5\paperheight]{\textwidth}
+        
+        \textbf{\setstretch{1.5}\Large\inserttitle\\
+                \small\insertsubtitle}\\
+        
+        \vspace{-0.3cm}
+        \hspace{-0.3cm}   
+        \begin{tabular}{>{\raggedright\arraybackslash}m{0.9\textwidth}}
+            {\setstretch{1.125} \footnotesize{\insertauthor} \newline
+         \scriptsize{\setstretch{0.75}\textit{ \insertinstitute}} \newline
+            \footnotesize{\insertdate}   }
+        \end{tabular}
+        
+        \vspace{-1cm}
+    \end{minipage}
 }
 
-\setbeamertemplate{title}{
-%  \raggedright%  % <-- Comment here
-  \linespread{1.0}%
-  \inserttitle%
-  \par%
-  \vspace*{0.5em}
-}
-\setbeamertemplate{subtitle}{
-%  \raggedright%  % <-- Comment here
-  \insertsubtitle%
-  \par%
-  \vspace*{0.5em}
-}
+
 
 \def\ps@navigation@titlepage{%
     \setbeamertemplate{headline}{
         \leavevmode%
         \hbox{%
-        \begin{beamercolorbox}[wd=\paperwidth,ht=37.5ex,dp=0ex,center]{bgcolor} 
+        \begin{beamercolorbox}[wd=\paperwidth,ht=4cm,dp=0ex,center]{bgcolor} 
             \includegraphics[width=\linewidth, page=1, trim= 0cm 6cm 0cm 0cm, clip]{images/largeDetectorPhoto.jpeg}
         \end{beamercolorbox}
+        \vspace{-0.75cm}
         }
     }
     \setbeamertemplate{footline}{
         \leavevmode
-            \hbox{
-                \begin{beamercolorbox}[wd=\paperwidth,ht=2.25ex,dp=1ex,center]{bgcolor}
+            \hbox{\centering
+                \begin{beamercolorbox}[wd=\paperwidth,ht=0ex,dp=3.5ex,center]{bgcolor}
                         \href{https://cern.ch}{\includegraphics[height=0.075\linewidth, trim= -2.5cm -5cm -2.5cm -5cm]{images/cern.jpeg}}
                         \href{https://lhcb.web.cern.ch}{\includegraphics[page=1, trim= -5cm -2.5cm -5cm -2.5cm, height=0.075\linewidth ]{images/lhcb-logo-0121.pdf}}\hspace{0.75cm}
                         \href{https://e5.physik.tu-dortmund.de/en/}{\includegraphics[page=1, trim= -0.4cm -0.4cm -0.4cm -0.4cm, height=0.075\linewidth ]{images/tud_logo_cmyk.pdf}}\hspace{0.75cm}
                         \href{https://www.smarthep.org}{\includegraphics[height=0.075\linewidth]{images/smarthep-full.png}}
-                        \href{https://marie-sklodowska-curie-actions.ec.europa.eu}{\includegraphics[height=0.075\linewidth]{template/images/marie-curie-actions.jpg}}
+                        \href{https://marie-sklodowska-curie-actions.ec.europa.eu}{\includegraphics[height=0.075\linewidth]{template/images/marie-curie-actions.jpg}}\\\vspace{-0.2cm}
+                        \begin{tabular}{>{\raggedright\arraybackslash}m{0.835\textwidth} >{\raggedleft\arraybackslash}m{0.065\textwidth}}
+                        \scriptsize{\textit{We acknowledge funding from the European Union Horizon 2020 research and innovation programme, call H2020-MSCA-ITN-2020, under Grant Agreement n. 956086.}}
+                        & \vspace{0.3cm}\href{https://cordis.europa.eu/project/id/956086}{\includegraphics[width=\linewidth]{template/images/EU-Logo.jpeg}}
+                        
+                        \end{tabular}
                 \end{beamercolorbox}
         }
     }
@@ -62,4 +52,3 @@
     \@nameuse{ps@navigation}}
 \addtobeamertemplate{title page}{\thispagestyle{navigation@titlepage}}{}
 \makeatother
-    
